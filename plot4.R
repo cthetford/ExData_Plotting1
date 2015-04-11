@@ -12,9 +12,12 @@ pdata$Date <- as.Date(pdata$Date,"%d/%m/%Y")
 
 par(mfrow = c(2,2))
 plot(pdata$Time,pdata$Global_active_power,type="l",
-     ylab="Global Active Power (kilowatts)",
+     ylab="Global Active Power
      xlab="") 
 
+plot(pdata$Time,pdata$Voltage,type="l",
+     ylab="Voltage",
+     xlab="datetime") 
 
 
 with (pdata,plot(Time, Sub_metering_1,
@@ -33,3 +36,6 @@ legend("topright",
        legend=c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"),
        lty="11")
 
+plot(pdata$Time,pdata$Global_reactive_power,type="l",
+     ylab="Global reactive power",
+     xlab="datetime") 
